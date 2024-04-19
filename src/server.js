@@ -1,5 +1,7 @@
 const { app } = require(".");
 
-app.listen(3000, async () => {
-  console.log("Server is running on port 3000");
+const PORT = 3000;
+
+app.listen(PORT, async () => {
+  console.log("Server is running on port " + PORT);
 });
