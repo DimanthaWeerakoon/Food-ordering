@@ -28,3 +28,8 @@ const login = async (req, res) => {
     return res.status(404).send({ message: "User not found" });
   } catch (error) {}
 };
+
+module.exports = {
+  register,
+  login,
+};

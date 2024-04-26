@@ -18,7 +18,6 @@ module.exports = {
         password: password,
         role: role,
       });
-
       return user;
     } catch (error) {
       throw new Error(error.message);
