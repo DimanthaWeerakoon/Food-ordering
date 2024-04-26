@@ -17,7 +17,7 @@ const login = async (req, res) => {
   const { password, email } = req.body;
   try {
     const user = await userService.getUserByEmail(email);
-    const isPasswordValid = bcrypt.compare(password, user.password);
+    const isPasswordValid = await bcrypt.compare(password, user.password);
     if (user) {
       if (isPasswordValid) {
         const jwt = await generateToken(user._id);

@@ -7,7 +7,7 @@ module.exports = {
       let { fullName, email, password, role } = userData;
       const isUserExist = await User.findOne({ email: email });
       if (isUserExist) {
-        throw new Error("User already exist with this email !");
+        throw new Error("User already exist with this email");
       }
 
       password = await bcrypt.hash(password, 8);
