@@ -61,7 +61,7 @@ module.exports = {
     }
   },
 
-  async getRestaurantByUserId(userId) {
+  async getRestaurantsByUserId(userId) {
     try {
       const restaurant = await Restaurant.findOne({ owner: userid })
         .populate("owner")
@@ -91,7 +91,7 @@ module.exports = {
     } catch (error) {}
   },
 
-  async addToFavorite(restaurantId, user) {
+  async addToFavorites(restaurantId, user) {
     try {
       const restaurant = this.findRestaurantById(restaurantId);
       const dto = {
