@@ -61,7 +61,7 @@ module.exports = {
     }
   },
 
-  async getRestaurantByuserId(userId) {
+  async getRestaurantByUserId(userId) {
     try {
       const restaurant = await Restaurant.findOne({ owner: userid })
         .populate("owner")
@@ -101,13 +101,13 @@ module.exports = {
         description: restaurant.description,
       };
 
-      const favorite = user.favorite || [];
-      const index = favorite.findIndex(
-        (favorites) => favorite._id === restaurant.id
+      const favorites = user.favorite || [];
+      const index = favorites.findIndex(
+        (favorites) => favorites._id === restaurant.id
       );
 
       if (index !== -1) {
-        favorite.splice(index, 1);
+        favorites.splice(index, 1);
       } else {
         favorites.push(dto);
       }
