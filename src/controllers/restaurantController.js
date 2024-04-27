@@ -1,10 +1,9 @@
 const restaurantService = require("../services/RestaurantService");
-const userService = require("../services/userService");
 
 const createRestaurant = async (req, res) => {
   try {
     const user = req.user;
-    const restaurant = await restaurantService.createRestaurant(req.body, user);
+    const restaurant = await RestaurantService.createRestaurant(req.body, user);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
